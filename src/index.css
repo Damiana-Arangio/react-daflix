@@ -1,0 +1,46 @@
+/******************
+    RESET PAGINA
+*******************/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/********************
+    VARIABILI CSS 
+*********************/
+
+:root {
+
+    /* Background color */
+    --bg-main: #141414;
+    --bg-secondary: #000000;
+    --bg-overlay: #181818;
+
+    /* Color */
+    --text-main: #ffffff;
+    --text-secondary: #4B4B4B;
+
+    /* Accent */
+    --accent-red: #E50914;
+}
+
+/**********************
+    REGOLE GENERALI
+***********************/
+html {
+    font-size: 12px;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    font-size: 1rem;
+    color: #FFFFFF;
+    background-color: #141414;
+}
+
+ul {
+    list-style-type: none;
+}
