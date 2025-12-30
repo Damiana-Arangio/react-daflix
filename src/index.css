@@ -21,6 +21,7 @@
     /* Color */
     --text-main: #ffffff;
     --text-secondary: #4B4B4B;
+    --text-muted: rgba(255, 255, 255, 0.75);
 
     /* Accent */
     --accent-red: #E50914;
@@ -43,4 +44,63 @@ body {
 
 ul {
     list-style-type: none;
+}
+
+/***************************
+    CLASSI RIUTILIZZABILI
+***************************/
+
+/** Flexbox */
+.flex-row {
+    display: flex;
+}
+
+.gap-20 {
+    gap: 20px;
+}
+
+/**************
+    HEADER
+***************/
+.myHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    margin: 0 30px;
+
+    /* Debug */
+    /* background-color: greenyellow; */
+}
+
+.myHeader>.flex-row {
+    align-items: center;
+    gap: 10px;
+}
+
+/************
+    LOGO
+*************/
+
+.logo {
+    height: 68px;
+    width: auto;
+}
+
+/************
+    NAVBAR
+*************/
+
+nav a {
+    text-decoration: none;
+    color: var(--text-muted);
+}
+
+nav a:hover {
+    color: var(--text-main);
+}
+
+nav a.active {
+    font-weight: bold;
+    color: var(--text-main);
 }
