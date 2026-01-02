@@ -104,3 +104,27 @@ nav a.active {
     font-weight: bold;
     color: var(--text-main);
 }
+
+/***************
+    SEARCHBAR
+****************/
+
+.iconSearch {
+    margin-top: 5px;
+    font-size: 1.4rem;
+}
+
+.searchbar {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--text-muted);
+    padding: 0 5px;
+}
+
+.input {
+    border: none;
+    outline: none;
+    color: white;
+    background-color: transparent;
+    padding: 5px;
+}
+
