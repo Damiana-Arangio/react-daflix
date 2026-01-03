@@ -1,7 +1,19 @@
 
-function CardMedia() {
+function CardMedia(props) {
+
+    const { item } = props;
+    const basePathImage = "https://image.tmdb.org/t/p/w92/"
+
     return (
-        <h1>CardMedia</h1>
+
+        <article>
+
+            {/* Poster */}
+            <img 
+                src={basePathImage + item.poster_path} 
+                alt={item.title || item.name || item.original_title || item.original_name} />
+        </article>
+        
     )
 }
 

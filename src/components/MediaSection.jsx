@@ -1,10 +1,26 @@
 import CardMedia from "./CardMedia";
 
-function MediaSection() {
+function MediaSection(props) {
+    const { title, items } = props;
+
     return (
         <>
-            <h1>MediaSection</h1>
-            <CardMedia/>
+
+            <section className="mediaSection">
+
+                {/* Titolo sezione */}
+                <h2>{title}</h2>
+
+                {/* Lista poster */}
+                <div>
+                    {items.map(item => (
+                            <CardMedia
+                                key={item.id}
+                                item={item}
+                            />
+                    ))}
+                </div>
+            </section>
         </>
     )
 }
