@@ -1,6 +1,6 @@
 
-import Navbar from "../Navbar/Navbar";
-import Searchbar from "../Searchbar/Searchbar"
+import Navbar from "./Navbar";
+import Searchbar from "./Searchbar"
 
 function MyHeader() {
     return (
