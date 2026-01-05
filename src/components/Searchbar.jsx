@@ -18,7 +18,7 @@ function Searchbar() {
 
     return (
 
-        <form onSubmit={handleSubmit} className= {isOpen && "searchbar"}>
+        <form onSubmit={handleSubmit} className= {isOpen ? "searchbar" : ""}>
 
             {/* Icona ricerca */}
             <FontAwesomeIcon icon={faMagnifyingGlass} onClick={openSearchbar} className="iconSearch" />
