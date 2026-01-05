@@ -12,7 +12,7 @@ function MediaSection(props) {
                 <h2>{title}</h2>
 
                 {/* Lista poster */}
-                <div>
+                <div className="containerPosterList">
                     {items.map(item => (
                             <CardMedia
                                 key={item.id}

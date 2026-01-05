@@ -128,9 +128,52 @@ nav a.active {
     padding: 5px;
 }
 
+
 /******************
     SEZIONE MEDIA
 *******************/
 .mediaSection {
-    margin: 40px 0;
+    margin: 40px 20px;
+}
+
+
+.containerPosterList {
+    display: flex;
+    gap: 5px;
+    padding-bottom: 3px;
+    margin-top: 10px;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+
+/** Layout Scrollbar */
+
+/* Altezza barra */
+.containerPosterList::-webkit-scrollbar {
+    height: 7px;
+
+}
+
+/* Colore sfondo barra */
+.containerPosterList::-webkit-scrollbar-track {
+    background: #222;
+}
+
+/* Colore slider */
+.containerPosterList::-webkit-scrollbar-thumb {
+    background-color: #353535;
+    border-radius: 4px;
+}
+
+/* Colore slider hover */
+.containerPosterList::-webkit-scrollbar-thumb:hover {
+    background-color: #5c5c5c;
+}
+
+/* Poster film/serie */
+.imgPoster {
+    height: 100%;
+    object-fit: cover;
+
 }

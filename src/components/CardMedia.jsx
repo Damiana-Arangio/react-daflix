@@ -6,12 +6,14 @@ function CardMedia(props) {
 
     return (
 
-        <article>
+        <article className="poster">
 
             {/* Poster */}
             <img 
+                className="imgPoster"
                 src={basePathImage + item.poster_path} 
                 alt={item.title || item.name || item.original_title || item.original_name} />
+
         </article>
         
     )
