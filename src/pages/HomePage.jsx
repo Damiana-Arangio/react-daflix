@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import MediaSection from '../components/MediaSection';
 import axios from 'axios';
+import Hero from '../components/Hero';
 
 function HomePage() {
 
@@ -8,19 +9,36 @@ function HomePage() {
         HOOK
     ************/
 
-    // Stato
+    // Stato (Sezioni Media)
     const [filmDiTendenza, setFilmDiTendenza] = useState([]);
     const [tiAppassioneranno, setTiappassioneranno] = useState([]);
     const [serieInOndaOggi, setSerieInOndaOggi] = useState([]);
     const [tesoriPerTe, setTesoriPerTe] = useState([]);
     
-    // Effetto
+    // Stato (Hero)
+    const [heroItem, setHeroItem] = useState(null);
+
+    // Effetto (Sezioni Media)
     useEffect( () => {
         fetchSection("/trending/movie/day", setFilmDiTendenza);
         fetchSection("/tv/top_rated", setTiappassioneranno);
         fetchSection("/tv/airing_today", setSerieInOndaOggi);
         fetchSection("/movie/top_rated", setTesoriPerTe);
     }, [] );
+
+    // Effetto (Hero)
+    useEffect(() => {
+
+        // Recupera il primo film di tendenza e aggiorno lo stato
+        if (filmDiTendenza.length > 0) {
+            setHeroItem(filmDiTendenza[8]);
+        }
+    }, [filmDiTendenza]);
+
+    // Debug
+    useEffect(() => {
+        console.log("Primo film di tendenza per hero:", heroItem);
+    }, [heroItem]);
 
 
     /**************
@@ -46,6 +64,15 @@ function HomePage() {
     return (
         <>
             
+            {/* Sezione Hero */}
+            {heroItem && (
+                <Hero
+                    title={heroItem.title}
+                    poster={heroItem.backdrop_path}
+                />
+            )}
+            
+            {/* Sezione Media */}
             {homeSections.map( section => (
                 <MediaSection
                     key = {section.id}
@@ -59,6 +86,7 @@ function HomePage() {
     /**************
         FUNZIONI
     ***************/
+    // Funzione che recupera una lista di contenuti da TMDB in base all'endpoint specificato
     function fetchSection(endpoint, setState) {
 
         const url = `${API_URL}${endpoint}?api_key=${API_KEY}&language=it-IT&page=1`;
