@@ -32,7 +32,8 @@ function HomePage() {
 
         // Recupera il primo film di tendenza e aggiorno lo stato
         if (filmDiTendenza.length > 0) {
-            setHeroItem(filmDiTendenza[8]);
+            const randomIndex = Math.floor(Math.random() * filmDiTendenza.length);
+            setHeroItem(filmDiTendenza[randomIndex]);
         }
     }, [filmDiTendenza]);
 
@@ -92,7 +93,7 @@ function HomePage() {
     // Funzione che recupera una lista di contenuti da TMDB in base all'endpoint specificato
     function fetchSection(endpoint, setState) {
 
-        const url = `${API_URL}${endpoint}?api_key=${API_KEY}&language=it-IT&page=1`;
+        const url = `${API_URL}${endpoint}?api_key=${API_KEY}&language=it-IT`;
 
         axios.get(url)
             .then(res => setState(res.data.results))
