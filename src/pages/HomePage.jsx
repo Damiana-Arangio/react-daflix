@@ -17,6 +17,7 @@ function HomePage() {
     
     // Stato (Hero)
     const [heroItem, setHeroItem] = useState(null);
+    console.log(heroItem);
 
     // Effetto (Sezioni Media)
     useEffect( () => {
@@ -47,10 +48,10 @@ function HomePage() {
 
     // Sezioni home
     const homeSections = [
-        { id: 1, title: "Film di tendenza", items: filmDiTendenza}, 
-        { id: 2, title: "Pensiamo ti appassioneranno", items: tiAppassioneranno }, 
-        { id: 3, title: "Serie tv in onda oggi", items: serieInOndaOggi }, 
-        { id: 4, title: "Tesori per te", items: tesoriPerTe }, 
+        { id: 1, title: "Film di tendenza", items: filmDiTendenza, isHeroRow: true}, 
+        { id: 2, title: "Pensiamo ti appassioneranno", items: tiAppassioneranno, isHeroRow: false }, 
+        { id: 3, title: "Serie tv in onda oggi", items: serieInOndaOggi, isHeroRow: false }, 
+        { id: 4, title: "Tesori per te", items: tesoriPerTe, isHeroRow: false }, 
     ]
 
     // Chiamate API
@@ -68,15 +69,18 @@ function HomePage() {
                 <Hero
                     title={heroItem.title}
                     poster={heroItem.backdrop_path}
+                    overview={heroItem.overview}
                 />
             )}
             
             {/* Sezione Media */}
-            {homeSections.map( section => (
+            {homeSections.map(homeSection => (
                 <MediaSection
-                    key = {section.id}
-                    title={section.title}
-                    items={section.items}
+                    key={homeSection.id}
+                    title={homeSection.title}
+                    items={homeSection.items}
+                    isHeroRow={homeSection.isHeroRow}
+
                 />
             ))}
         </>

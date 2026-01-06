@@ -6,7 +6,7 @@ function CardMedia(props) {
 
     return (
 
-        <article className="poster">
+        <article>
 
             {/* Poster */}
             <img 

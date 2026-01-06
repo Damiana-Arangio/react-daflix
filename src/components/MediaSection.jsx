@@ -1,12 +1,12 @@
 import CardMedia from "./CardMedia";
 
 function MediaSection(props) {
-    const { title, items } = props;
+    const { title, items, isHeroRow } = props;
 
     return (
         <>
 
-            <section className="mediaSection">
+            <section className={`mediaSection ${isHeroRow ? "mediaSectionHero" : ""} `} >
 
                 {/* Titolo sezione */}
                 <h2>{title}</h2>
@@ -21,6 +21,7 @@ function MediaSection(props) {
                     ))}
                 </div>
             </section>
+
         </>
     )
 }
