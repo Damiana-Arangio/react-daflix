@@ -62,8 +62,7 @@ function HomePage() {
         RENDERING
     **************/
     return (
-        <>
-            
+        <>   
             {/* Sezione Hero */}
             {heroItem && (
                 <Hero

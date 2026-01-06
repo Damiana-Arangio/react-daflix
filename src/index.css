@@ -50,10 +50,6 @@ ul {
     CLASSI RIUTILIZZABILI
 ***************************/
 
-.container {
-    margin: ;
-}
-
 /** Flexbox */
 .flex-row {
     display: flex;
@@ -70,17 +66,27 @@ ul {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
     height: 70px;
-    margin: 0 30px;
-
-    /* Debug */
-    /* background-color: greenyellow; */
+    background-color: rgba(0, 0, 0, 0.70);
+    
+    /* Position */
+    position: fixed;
+    z-index: 2;
 }
 
 .myHeader>.flex-row {
     align-items: center;
     gap: 10px;
 }
+
+.headerLeft {
+    margin-left: 30px;
+}
+
+.headerRight {
+    margin-right: 40px;
+} 
 
 /************
     LOGO
@@ -137,13 +143,14 @@ nav a.active {
 ************/
 .heroSection {
     width: 100%;
-    height: 50vh;
-    min-height: 400px;
+    height: 75vh;
+    min-height: 450px;
     overflow: hidden;
 
     /* Posizione relativa per logo + titolo */
     position:relative;
 }
+
 
 .heroSection > img{
     width: 100%;
