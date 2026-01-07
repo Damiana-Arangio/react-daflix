@@ -234,6 +234,20 @@ nav a.active {
 
 }
 
+/******************
+    MEDIA CARD
+*******************/
+
+.cardMedia {
+    transition: transform 0.25s ease;
+}
+
+.cardMedia:hover {
+    transform: scale(1.2);
+    
+}
+
+
 /*******************
     LA MIA LISTA
 ********************/
