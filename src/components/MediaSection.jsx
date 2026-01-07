@@ -1,6 +1,7 @@
 import CardMedia from "./CardMedia";
 
 function MediaSection(props) {
+    
     const { title, items, isHeroRow } = props;
 
     return (
@@ -13,7 +14,7 @@ function MediaSection(props) {
 
                 {/* Lista poster */}
                 <div className="containerPosterList">
-                    {items.map(item => (
+                    {items?.map(item => (
                             <CardMedia
                                 key={item.id}
                                 item={item}
