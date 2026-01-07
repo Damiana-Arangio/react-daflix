@@ -6,8 +6,8 @@ import Hero from '../components/Hero';
 function SerieTvPage() {
 
     /***********
-      HOOK
-  ************/
+        HOOK
+    ************/
 
     // Stato (Sezioni Media)
     const [serieAzioneAvventura, setserieAzioneAvventura] = useState([]);
@@ -17,7 +17,6 @@ function SerieTvPage() {
 
     // Stato (Hero)
     const [heroItem, setHeroItem] = useState(null);
-    console.log(heroItem);
 
     // Effetto (Sezioni Media)
     useEffect(() => {
@@ -36,11 +35,6 @@ function SerieTvPage() {
             setHeroItem(serieAzioneAvventura[randomIndex]);
          }
     }, [serieAzioneAvventura]);
-
-    // Debug
-    useEffect(() => {
-         console.log("Serie casuale (azione e avventura) per hero:", heroItem);
-     }, [heroItem]);
 
 
     /**************
@@ -89,19 +83,14 @@ function SerieTvPage() {
 
     /**************
        FUNZIONI
-   ***************/
+    ***************/
     // Funzione che recupera una lista di contenuti da TMDB in base al genere specificato
     function fetchSection(id_genres, setState) {
 
         const url = `${API_URL}/discover/tv?api_key=${API_KEY}&language=it-IT&with_genres=${id_genres}`;
 
         axios.get(url)
-            .then(res => {
-                setState(res.data.results)
-
-                // Debug
-                console.log("Lista generi: ", res.data.results)})
-
+            .then(res => setState(res.data.results))
             .catch(err => console.error("Errore chiamata API", err))
     };
 }

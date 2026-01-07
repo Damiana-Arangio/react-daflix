@@ -17,7 +17,6 @@ function HomePage() {
     
     // Stato (Hero)
     const [heroItem, setHeroItem] = useState(null);
-    console.log(heroItem);
 
     // Effetto (Sezioni Media)
     useEffect( () => {
@@ -30,17 +29,12 @@ function HomePage() {
     // Effetto (Hero)
     useEffect(() => {
 
-        // Recupera il primo film di tendenza e aggiorno lo stato
+        // Selezione casuale di un film di tendenza  da mostrare nell'hero
         if (filmDiTendenza.length > 0) {
             const randomIndex = Math.floor(Math.random() * filmDiTendenza.length);
             setHeroItem(filmDiTendenza[randomIndex]);
         }
     }, [filmDiTendenza]);
-
-    // Debug
-    useEffect(() => {
-        console.log("Primo film di tendenza per hero:", heroItem);
-    }, [heroItem]);
 
 
     /**************

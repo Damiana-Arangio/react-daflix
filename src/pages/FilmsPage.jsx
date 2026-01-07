@@ -18,7 +18,6 @@ function FilmsPage() {
 
     // Stato (Hero)
     const [heroItem, setHeroItem] = useState(null);
-    console.log(heroItem);
 
     // Effetto (Sezioni Media)
     useEffect(() => {
@@ -37,11 +36,6 @@ function FilmsPage() {
             setHeroItem(filmAmore[randomIndex]);
         }
     }, [filmAmore]);
-
-    // Debug
-    useEffect(() => {
-        console.log("Film d'amore casuale per hero:", heroItem);
-    }, [heroItem]);
 
 
     /**************
@@ -98,12 +92,7 @@ function FilmsPage() {
         const url = `${API_URL}/discover/movie?api_key=${API_KEY}&language=it-IT&with_genres=${id_genres}`;
 
         axios.get(url)
-            .then(res => {
-                setState(res.data.results)
-
-                // Debug
-                console.log("Lista generi: ", res.data.results)
-            })
+            .then(res => setState(res.data.results))
 
             .catch(err => console.error("Errore chiamata API", err))
     };
