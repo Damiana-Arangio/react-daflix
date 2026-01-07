@@ -233,3 +233,23 @@ nav a.active {
     object-fit: cover;
 
 }
+
+/*******************
+    LA MIA LISTA
+********************/
+.myListPage {
+    margin-top: 100px;
+    margin-left: 50px;
+}
+
+.containerListaVuota {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh;
+}
+
+.testoListaVuota {
+    color: var(--text-secondary);
+    font-size: 1.2rem;
+}
