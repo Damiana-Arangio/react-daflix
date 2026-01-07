@@ -72,6 +72,7 @@ ul {
     
     /* Position */
     position: fixed;
+    top: 0;
     z-index: 2;
 }
 
@@ -162,7 +163,7 @@ nav a.active {
     margin: 0 50px;
     width: 500px;
     position: absolute;
-    bottom: 200px;
+    bottom: 180px;
 }
 
 .heroLogo {
@@ -199,6 +200,9 @@ nav a.active {
     background-color: var(--bg-main)
 }
 
+.firstSectionNewsPopulars {
+    margin-top: 120px;
+}
 
 /** Layout Scrollbar */
 

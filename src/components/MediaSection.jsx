@@ -2,12 +2,12 @@ import CardMedia from "./CardMedia";
 
 function MediaSection(props) {
     
-    const { title, items, isHeroRow } = props;
+    const { title, items, isHeroRow, isFirstNewsPopularsPage } = props;
 
     return (
         <>
 
-            <section className={`mediaSection ${isHeroRow ? "mediaSectionHero" : ""} `} >
+            <section className={`mediaSection ${isHeroRow ? "mediaSectionHero" : ""} ${isFirstNewsPopularsPage ? "firstSectionNewsPopulars" : ""}`} >
 
                 {/* Titolo sezione */}
                 <h2>{title}</h2>
